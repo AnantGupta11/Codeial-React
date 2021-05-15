@@ -2,8 +2,10 @@ import { UPDATE_POSTS } from './actionTypes';
 
 export function fetchPosts(){
     return(dispatch) =>{
-        const url = 'http://codeial.com:8000/api/v1/posts?page=1&limit=5';
-        fetch(url)
+        const url = 'http://localhost:8000/api/v1/posts/?page=1&limit=5';
+        fetch(url,{mode: 'no-cors',headers: {
+            "Content-Type": "application/json"
+       }})
             .then((response)=>{
                 return response.json();
             })
