@@ -27,7 +27,7 @@ class PostsList extends Component {
                     src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
                     alt="likes-icon"
                   />
-                  <span>{post.likes.length}</span>
+                  {/* <span>{post.likes.length}</span> */}
                 </div>
 
                 <div className="post-comments-icon">
