@@ -1,9 +1,9 @@
 
 import { UPDATE_POSTS } from './actionTypes';
-
+import { APIurls } from '../helpers/urls';
 export function fetchPosts(){
     return(dispatch) =>{
-        const url = '/api/v1/posts?page=1&limit=5';
+        const url = APIurls.fetchPosts();
         fetch(url,{method:"GET",headers: {
             "Content-Type": "application/json"
        }})
