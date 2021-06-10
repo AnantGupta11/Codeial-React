@@ -1,4 +1,4 @@
-import { AUTHENTICATE_USER, LOGIN_FAILED, LOGIN_START, LOGIN_SUCCESS, LOG_OUT, SIGNUP_FAILED, SIGNUP_START, SIGNUP_SUCCESS } from "./actionTypes";
+import { CLEAR_AUTH_STATE,AUTHENTICATE_USER, LOGIN_FAILED, LOGIN_START, LOGIN_SUCCESS, LOG_OUT, SIGNUP_FAILED, SIGNUP_START, SIGNUP_SUCCESS } from "./actionTypes";
 import { APIurls } from '../helpers/urls';
 import { getFormBody } from '../helpers/utils';
 
@@ -16,8 +16,8 @@ export function loginFailed(errorMessage){
 export function loginSuccess(user){
     return {
         type: LOGIN_SUCCESS,
-        user
-    }
+        user,
+    };
 }
 
 export function login(email,password){
@@ -50,8 +50,8 @@ export function login(email,password){
 export function authenticateUser(user){
     return {
         type: AUTHENTICATE_USER,
-        user
-    }
+        user,
+    };
 }
 
 export function logoutUser(){
@@ -81,7 +81,7 @@ export function signupFailed(error){
 export function signupSuccessfull(user){
     return {
         type: SIGNUP_SUCCESS,
-        user
+        user,
     }
 }
 
@@ -108,4 +108,11 @@ export function signup(email,password, confirmPassword, name){
             dispatch(signupFailed(data.message));
         })
     };
+}
+
+
+export function clearAuthState(){
+    return {
+        type: CLEAR_AUTH_STATE
+    }
 }
