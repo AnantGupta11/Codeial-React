@@ -26,7 +26,7 @@ class App extends React.Component {
               return <Home {...props} posts={posts}/>
             }}/>
             <Route path="/login" component={Login}/>
-            <Route path="/signup" component={SignUp}/>
+            <Route path="/register" component={SignUp}/>
             <Route  component={Page404}/>
           </Switch>
         </div>
