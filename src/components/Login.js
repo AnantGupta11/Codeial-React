@@ -45,7 +45,7 @@ class Login extends Component {
     render() {
         const { error, inProgress, isLoggedIn } = this.props.auth;
         if(isLoggedIn){
-            return <Redirect to="/" />;
+            return <Redirect to="/"/>;
         }
         return (
             <form className="login-form">
@@ -84,6 +84,6 @@ class Login extends Component {
 function mapStateToProps (state){
     return {
         auth: state.auth,
-    }
+    };
 }
 export default connect(mapStateToProps)(Login);
